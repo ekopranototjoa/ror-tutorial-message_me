@@ -14,3 +14,10 @@ require 'faker'
         password: "password"
     )
 end
+
+20.times do
+    Message.create(
+        body: Faker::Movies::BackToTheFuture.unique.quote,
+        user_id: Faker::Number.within(range:1..5)
+    )
+end
