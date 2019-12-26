@@ -6,6 +6,12 @@ const scroll_bottom = () => {
     }
 };
 
+const clear_message = () => {
+    $("form.ui.reply.form").on("ajax:success", () => {
+        $('#message_body').val('');
+    });
+};
+
 $(document).on('turbolinks:load', function () {
     $('.ui.dropdown').dropdown();
 
@@ -14,4 +20,6 @@ $(document).on('turbolinks:load', function () {
     });
 
     scroll_bottom();
+
+    clear_message();
 })
